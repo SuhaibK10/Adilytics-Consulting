@@ -3,9 +3,8 @@
 export const BRAND = {
   name: "Adilytics",
   legalName: "Adilytics",
-  founder: "Adil Ali Khan",
   description:
-    "Sales, distribution and corporate gifting partner for consumer brands in India. Strategy and hands-on execution, led by an operator with 21+ years on the ground.",
+    "Sales, distribution and corporate gifting partner for consumer brands in India. Strategy and hands-on execution, backed by 21+ years on the ground.",
 };
 
 export const CONTACT = {
@@ -38,7 +37,7 @@ export const NAV = [
   { href: "/#services", label: "Services" },
   { href: "/#how-we-work", label: "How we work" },
   { href: "/#track-record", label: "Track record" },
-  { href: "/#founder", label: "Founder" },
+  { href: "/#clients", label: "Clients" },
 ] as const;
 
 export const ACCENTS = [

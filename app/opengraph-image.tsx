@@ -43,11 +43,12 @@ function mapImage() {
 
 export default async function Image() {
   // Literal paths, so the bundler only traces these files rather than the whole project
-  const [geist, mono, serif, photo] = await Promise.all([
+  const [geist, mono, serif, louisPolo, ovastar] = await Promise.all([
     readFile(join(process.cwd(), "app/fonts/og/geist-500.ttf")),
     readFile(join(process.cwd(), "app/fonts/og/geist-mono-400.ttf")),
     readFile(join(process.cwd(), "app/fonts/og/instrument-serif-italic.ttf")),
-    readFile(join(process.cwd(), "public/founder.jpg")),
+    readFile(join(process.cwd(), "public/clients/louis-polo.svg")),
+    readFile(join(process.cwd(), "public/clients/ovastar.png")),
   ]);
   const mapHeight = 500;
 
@@ -71,17 +72,12 @@ export default async function Image() {
             </span>
           </div>
 
-          <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
-            <img
-              src={`data:image/jpeg;base64,${photo.toString("base64")}`}
-              width={64}
-              height={64}
-              alt=""
-              style={{ borderRadius: 999, objectFit: "cover", border: "3px solid #fff" }}
-            />
-            <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
-              <span style={{ fontSize: 23, letterSpacing: -0.4 }}>Led by {BRAND.founder}</span>
-              <span style={{ fontSize: 19, color: C.soft }}>Sales · Distribution · Corporate gifting</span>
+          {/* Current clients, same ink logos as the homepage */}
+          <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
+            <span style={{ fontFamily: "Geist Mono", fontSize: 14, letterSpacing: 2.8, color: C.mute, textTransform: "uppercase" }}>Now working with</span>
+            <div style={{ display: "flex", alignItems: "center", gap: 36 }}>
+              <img src={`data:image/svg+xml;base64,${louisPolo.toString("base64")}`} width={94} height={52} alt="" />
+              <img src={`data:image/png;base64,${ovastar.toString("base64")}`} width={136} height={35} alt="" />
             </div>
           </div>
         </div>

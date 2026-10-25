@@ -36,8 +36,38 @@ export function Comparison() {
         intro="Most growing brands weigh the same options. Here is how they compare."
       />
 
-      <div className="mt-12 overflow-x-auto rounded-3xl border border-line bg-white/55" data-reveal>
-        <table className="w-full min-w-[46rem] border-collapse text-left text-[0.92rem]">
+      {/* Phones: one card per question, so nothing scrolls sideways */}
+      <div className="mt-12 grid gap-3 md:hidden">
+        {COMPARISON.rows.map((row, r) => (
+          <div
+            key={row.label}
+            className="rounded-3xl border border-line bg-white/55 p-5"
+            data-reveal
+            style={{ ["--reveal-delay" as string]: `${(r % 2) * 80}ms` }}
+          >
+            <p className="eyebrow">{row.label}</p>
+            <dl className="mt-3 divide-y divide-line text-[0.92rem]">
+              {row.cells.map((cell, i) => {
+                const inline = typeof cell === "boolean";
+                return (
+                  <div
+                    key={i}
+                    className={`py-2.5 ${inline ? "flex items-center justify-between gap-4" : ""} ${i === 0 ? "-mx-3 rounded-2xl border-0 bg-accent-soft px-3" : ""}`}
+                  >
+                    <dt className={`text-[0.8rem] ${i === 0 ? "font-medium text-accent-strong" : "text-ink-mute"}`}>{columns[i]}</dt>
+                    <dd className={`leading-snug ${inline ? "" : "mt-0.5"} ${i === 0 ? "font-medium text-ink" : "text-ink-soft"}`}>
+                      <Value cell={cell} ours={i === 0} />
+                    </dd>
+                  </div>
+                );
+              })}
+            </dl>
+          </div>
+        ))}
+      </div>
+
+      <div className="mt-12 hidden overflow-hidden rounded-3xl border border-line bg-white/55 md:block" data-reveal>
+        <table className="w-full border-collapse text-left text-[0.92rem]">
           <thead>
             <tr>
               <th scope="col" className="w-[20%] p-5 font-normal">

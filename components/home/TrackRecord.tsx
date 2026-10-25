@@ -13,7 +13,7 @@ export function TrackRecord() {
               Numbers from the field, <Em>not from slides.</Em>
             </>
           }
-          intro="Every engagement is led by our founder, whose career runs from a Coca-Cola sales beat in Jaipur to Vice President at Swiss Military."
+          intro="Our team has built sales and distribution for Samsung, Coca-Cola, Spice and Swiss Military, from a single sales beat in Jaipur to national retail chains."
         />
 
         <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -32,7 +32,7 @@ export function TrackRecord() {
             </li>
           ))}
         </ul>
-        <p className="mt-6 text-xs text-ink-mute">Figures are from roles held by our founder at the companies named.</p>
+        <p className="mt-6 text-xs text-ink-mute">Figures are from roles our team has held at the companies named.</p>
       </div>
     </section>
   );

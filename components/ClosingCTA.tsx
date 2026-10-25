@@ -1,4 +1,4 @@
-import { BRAND, CONTACT } from "@/lib/site";
+import { CONTACT } from "@/lib/site";
 import { Em } from "@/components/SectionHeading";
 import { BookingCalendar } from "@/components/BookingCalendar";
 
@@ -8,8 +8,6 @@ type Props = {
   topic?: string; // preselected on the booking form
 };
 
-const FIRST_NAME = BRAND.founder.split(" ")[0];
-
 // Every page ends here, so "Book a call" links anywhere on the site can point at #book.
 export function ClosingCTA({
   title = (
@@ -17,11 +15,12 @@ export function ClosingCTA({
       Ready for your <Em>next market?</Em>
     </>
   ),
-  body = `Pick a time below. You will speak to ${FIRST_NAME} directly, not a sales team.`,
+  body = "Pick a time below. You will speak to a senior consultant, not a sales team.",
   topic,
 }: Props) {
   return (
-    <section id="book" className="container-x pt-24 sm:pt-32">
+    // overflow-x-clip: the glow is wider than a phone screen and must not widen the page
+    <section id="book" className="container-x overflow-x-clip pt-24 sm:pt-32">
       <div className="relative mx-auto max-w-3xl text-center" data-reveal>
         <div aria-hidden className="pointer-events-none absolute left-1/2 top-1/2 -z-10 size-[30rem] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,var(--accent-glow),transparent_65%)] opacity-60 blur-2xl" />
         <h2 className="text-[2.4rem] font-medium leading-[1.05] tracking-[-0.035em] text-balance sm:text-6xl">{title}</h2>

@@ -1,5 +1,8 @@
-// Page copy and data. Track record figures come from the founder's LinkedIn (shared 2026-10-25);
-// confirm each with him before launch.
+// Page copy and data. Track record figures come from the founder's LinkedIn (shared 2026-10-25) and are
+// presented as the team's experience; confirm each with him before launch.
+
+import louisPoloLogo from "@/public/clients/louis-polo.svg";
+import ovastarLogo from "@/public/clients/ovastar.png";
 
 export const HERO_WORDS = ["get on more shelves.", "enter new cities.", "build real distribution.", "win corporate orders."];
 
@@ -83,21 +86,31 @@ export const COMPARISON: { columns: string[]; rows: { label: string; cells: Cell
   columns: ["Full-time sales head", "Large consulting firm", "Distribution platform"],
   rows: [
     { label: "Time to start", cells: ["This month", "3 to 6 months to hire", "Weeks of scoping", "Fast, in their cities"] },
-    { label: "Who does the work", cells: ["A 21-year operator, hands-on", "One person, learning your category", "Mostly junior analysts", "Their team, their priorities"] },
+    { label: "Who does the work", cells: ["Senior operators, hands-on", "One person, learning your category", "Mostly junior analysts", "Their team, their priorities"] },
     { label: "You own the distributor network", cells: [true, true, "Advice only", false] },
     { label: "How you pay", cells: ["Fixed monthly fee", "Senior salary plus ESOPs", "Premium project fees", "A cut of every sale"] },
     { label: "Corporate gifting as a channel", cells: [true, false, false, false] },
   ],
 };
 
-export const CAREER = [
-  { year: "2022", role: "Vice President", org: "Swiss Military" },
-  { year: "2017", role: "Consultant to consumer brands", org: "Electronics, luggage, batteries" },
-  { year: "2015", role: "DGM Sales, West India", org: "Reach Mobiletech" },
-  { year: "2013", role: "Senior Manager, Channel Sales & Modern Trade", org: "Spice Retail" },
-  { year: "2008", role: "Area Business Manager", org: "Samsung India" },
-  { year: "2006", role: "Sales", org: "Reliance Communications" },
-  { year: "2004", role: "Sales Officer", org: "Hindustan Coca-Cola" },
+// Brands the firm is consulting for now. Logos are in public/clients/, recoloured to ink so they sit calmly on the page.
+export const CLIENTS = [
+  {
+    name: "Louis Polo",
+    url: "https://www.louispolo.in",
+    category: "Luggage & travel",
+    body: "Premium Indian luggage and travel accessories brand.",
+    logo: louisPoloLogo,
+    logoWidth: 150,
+  },
+  {
+    name: "OvaStar",
+    url: "https://ovastar.in",
+    category: "Home & kitchen appliances",
+    body: "Kitchen, heating, cooling and personal care appliances for Indian homes.",
+    logo: ovastarLogo,
+    logoWidth: 230,
+  },
 ];
 
 export const OCCASIONS = [

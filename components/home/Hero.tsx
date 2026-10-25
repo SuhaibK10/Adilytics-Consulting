@@ -38,7 +38,7 @@ export function Hero() {
         </h1>
 
         <p className="mx-auto mt-5 max-w-xl text-[1.05rem] leading-relaxed text-ink-soft text-pretty" data-reveal style={{ ["--reveal-delay" as string]: "120ms" }}>
-          Strategy and hands-on execution for sales, distribution and corporate gifting. Led by an operator who has built it on the ground, from Jaipur kiranas to national retail chains.
+          Strategy and hands-on execution for sales, distribution and corporate gifting. Our team has built it on the ground, from neighbourhood kiranas to national retail chains.
         </p>
 
         <div className="mt-8" data-reveal style={{ ["--reveal-delay" as string]: "200ms" }}>

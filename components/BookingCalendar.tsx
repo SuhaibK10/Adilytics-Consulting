@@ -1,10 +1,9 @@
 "use client";
 
-import Image from "next/image";
 import { useEffect, useState, type FormEvent } from "react";
-import founderPhoto from "@/public/founder.jpg";
 import { CALL_TOPICS } from "@/lib/content";
 import { BOOKING, BRAND, CONTACT, emailLink } from "@/lib/site";
+import { LogoMark } from "@/components/Logo";
 import { Calendar, Check, ChevronLeft, ChevronRight, Clock, Video } from "@/components/Icons";
 
 const FIELD =
@@ -14,7 +13,6 @@ const DAY_MS = 86_400_000;
 const IST_OFFSET_MS = 330 * 60_000;
 const WEEKDAYS = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 const MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
-const FIRST_NAME = BRAND.founder.split(" ")[0];
 const DAYS_LABEL = BOOKING.days.map((d) => `${WEEKDAYS[d]}s`).join(" & ");
 
 // Days are UTC-midnight timestamps holding IST dates, so getUTC* reads IST values without time zone maths.
@@ -125,15 +123,15 @@ export function BookingCalendar({ topic = CALL_TOPICS[0] }: { topic?: string }) 
     <div className="grid overflow-hidden rounded-[2rem] border border-line bg-white/60 text-left shadow-[0_30px_80px_-50px_rgb(0_0_0/0.35)] lg:grid-cols-[17rem_1fr_13rem]">
       <div className="p-6 sm:p-8">
         <div className="flex items-center gap-3">
-          <Image src={founderPhoto} alt="" sizes="3rem" placeholder="blur" className="size-12 rounded-full object-cover ring-2 ring-accent-tint" />
+          <LogoMark className="size-12" />
           <div>
-            <p className="font-medium tracking-tight">{BRAND.founder}</p>
-            <p className="text-sm text-ink-mute">Founder, {BRAND.name}</p>
+            <p className="font-medium tracking-tight">{BRAND.name}</p>
+            <p className="text-sm text-ink-mute">Sales & distribution partners</p>
           </div>
         </div>
         <p className="mt-6 text-2xl font-medium tracking-[-0.02em]">Intro call</p>
         <p className="mt-2 text-[0.95rem] leading-relaxed text-ink-soft">
-          Walk {FIRST_NAME} through your brand, channels and targets. You leave with a clear view of what to fix first.
+          Walk us through your brand, channels and targets. You leave with a clear view of what to fix first.
         </p>
         <ul className="mt-6 space-y-2.5 text-sm text-ink-soft">
           <li className="flex items-center gap-2.5">
