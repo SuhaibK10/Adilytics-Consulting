@@ -1,5 +1,6 @@
+import Image from "next/image";
 import Link from "next/link";
-import { EXPERIENCE_AT, HERO_WORDS } from "@/lib/content";
+import { COMPANY_LOGOS, EXPERIENCE_AT, HERO_WORDS } from "@/lib/content";
 import { ExpansionInput } from "@/components/home/ExpansionInput";
 import { HeroPanel } from "@/components/home/HeroPanel";
 import { ArrowRight } from "@/components/Icons";
@@ -50,10 +51,18 @@ export function Hero() {
 
         <div className="mx-auto mt-12 max-w-3xl border-t border-line pt-6" data-reveal style={{ ["--reveal-delay" as string]: "280ms" }}>
           <p className="eyebrow">Experience built at</p>
-          <ul className="mt-4 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-[1.05rem] font-medium tracking-tight text-ink/45">
-            {EXPERIENCE_AT.map((name) => (
-              <li key={name}>{name}</li>
-            ))}
+          <ul className="mt-5 flex flex-wrap items-center justify-center gap-x-10 gap-y-5">
+            {EXPERIENCE_AT.map((name) =>
+              COMPANY_LOGOS[name] ? (
+                <li key={name} className="flex h-8 items-center">
+                  <Image src={COMPANY_LOGOS[name].src} alt={name} style={{ height: COMPANY_LOGOS[name].height, width: "auto" }} />
+                </li>
+              ) : (
+                <li key={name} className="flex h-8 items-center text-[1.15rem] font-semibold tracking-tight text-ink">
+                  {name}
+                </li>
+              ),
+            )}
           </ul>
         </div>
       </div>

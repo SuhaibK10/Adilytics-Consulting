@@ -6,6 +6,9 @@ import louisPoloLogo from "@/public/clients/louis-polo.svg";
 import ovastarLogo from "@/public/clients/ovastar.png";
 import samsungLogo from "@/public/experience/samsung.svg";
 import cocaColaLogo from "@/public/experience/coca-cola.svg";
+import relianceLogo from "@/public/experience/reliance.png";
+import swissMilitaryLogo from "@/public/experience/swiss-military.png";
+import meizuLogo from "@/public/experience/meizu.svg";
 
 export const HERO_WORDS = ["get on more shelves.", "enter new cities.", "build real distribution.", "win corporate orders."];
 
@@ -74,19 +77,22 @@ export const STEPS = [
 ];
 
 export const TRACK_RECORD = [
-  { value: "₹45 Cr", label: "monthly business run across Mumbai and Thane", source: "Samsung India" },
-  { value: "3,100", label: "outlets covered through 9 distributors in Jaipur", source: "Hindustan Coca-Cola" },
-  { value: "15 days", label: "to set up a service network across Mumbai", source: "Reach Mobiletech" },
-  { value: "130", label: "in-store promoters, alongside a 110-person field sales force", source: "Samsung India" },
-  { value: "2 months", label: "to appoint distributors and clear pending trade issues across Mumbai, Goa, Maharashtra and MP", source: "Reach Mobiletech" },
-  { value: "13", label: "regional distributors managed across Mumbai and Goa", source: "Samsung India" },
+  { value: "₹45 Cr", label: "monthly business run across Mumbai and Thane", source: "Samsung India", company: "Samsung" },
+  { value: "3,100", label: "outlets covered through 9 distributors in Jaipur", source: "Hindustan Coca-Cola", company: "Coca-Cola" },
+  { value: "15 days", label: "to set up a service network across Mumbai", source: "Reach Mobiletech", company: "Reach Mobiletech" },
+  { value: "130", label: "in-store promoters, alongside a 110-person field sales force", source: "Samsung India", company: "Samsung" },
+  { value: "2 months", label: "to appoint distributors and clear pending trade issues across Mumbai, Goa, Maharashtra and MP", source: "Reach Mobiletech", company: "Reach Mobiletech" },
+  { value: "13", label: "regional distributors managed across Mumbai and Goa", source: "Samsung India", company: "Samsung" },
 ];
 
-// Ink logos for the track record cards, keyed by source, with a display height that evens out their visual weight.
-// Sources without an official logo (Reach Mobiletech) are set as text.
-export const SOURCE_LOGOS: Record<string, { src: StaticImageData; height: number }> = {
-  "Samsung India": { src: samsungLogo, height: 13 },
-  "Hindustan Coca-Cola": { src: cocaColaLogo, height: 26 },
+// Ink logos of companies the team has worked at (hero strip and track record cards), with display heights that even
+// out their visual weight. Companies without an official logo online (Spice, Reach Mobiletech) are set as text.
+export const COMPANY_LOGOS: Record<string, { src: StaticImageData; height: number }> = {
+  Samsung: { src: samsungLogo, height: 13 },
+  "Coca-Cola": { src: cocaColaLogo, height: 26 },
+  Reliance: { src: relianceLogo, height: 26 },
+  "Swiss Military": { src: swissMilitaryLogo, height: 28 },
+  Meizu: { src: meizuLogo, height: 17 },
 };
 
 export type Cell = string | boolean;

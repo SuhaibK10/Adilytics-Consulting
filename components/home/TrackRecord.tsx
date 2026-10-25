@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { SOURCE_LOGOS, TRACK_RECORD } from "@/lib/content";
+import { COMPANY_LOGOS, TRACK_RECORD } from "@/lib/content";
 import { SectionHeading, Em } from "@/components/SectionHeading";
 
 // Stat-first cards (Tano's pattern, in a calmer key): the number leads, the context follows.
@@ -29,8 +29,8 @@ export function TrackRecord() {
               <p className="mt-4 text-[0.98rem] leading-snug text-ink">{item.label}</p>
               <div className="mt-auto pt-6">
                 <div className="flex h-14 items-center border-t border-dashed border-line pt-4">
-                  {SOURCE_LOGOS[item.source] ? (
-                    <Image src={SOURCE_LOGOS[item.source].src} alt={item.source} style={{ height: SOURCE_LOGOS[item.source].height, width: "auto" }} />
+                  {COMPANY_LOGOS[item.company] ? (
+                    <Image src={COMPANY_LOGOS[item.company].src} alt={item.source} style={{ height: COMPANY_LOGOS[item.company].height, width: "auto" }} />
                   ) : (
                     <span className="text-[0.95rem] font-medium tracking-tight text-ink">{item.source}</span>
                   )}
