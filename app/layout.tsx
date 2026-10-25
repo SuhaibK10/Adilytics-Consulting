@@ -37,6 +37,10 @@ const instrument = localFont({
 const BOOT = `(function(){var d=document.documentElement;d.classList.add("js");try{var a=new URLSearchParams(location.search).get("accent")||sessionStorage.getItem("accent");if(a&&/^(${ACCENTS.map((a) => a.id).join("|")})$/.test(a)){d.setAttribute("data-accent",a);sessionStorage.setItem("accent",a)}}catch(e){}})()`;
 
 export const metadata: Metadata = {
+  // Link previews need absolute image URLs. Vercel supplies the production domain; local builds use localhost.
+  metadataBase: new URL(
+    process.env.VERCEL_PROJECT_PRODUCTION_URL ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}` : "http://localhost:3000",
+  ),
   title: {
     default: `${BRAND.name} · Sales, Distribution & Corporate Gifting`,
     template: `%s · ${BRAND.name}`,
@@ -48,7 +52,10 @@ export const metadata: Metadata = {
     title: `${BRAND.name} · Sales, Distribution & Corporate Gifting`,
     description: BRAND.description,
     type: "website",
+    locale: "en_IN",
+    siteName: BRAND.name,
   },
+  twitter: { card: "summary_large_image" },
 };
 
 export const viewport: Viewport = {

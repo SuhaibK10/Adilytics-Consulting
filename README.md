@@ -10,7 +10,7 @@ pnpm dev                        # http://localhost:3000
 pnpm build && pnpm start        # production build
 ```
 
-Next.js 16 (App Router) · React 19 · Tailwind CSS 4 · TypeScript. No backend: every call to action opens WhatsApp with the message already written.
+Next.js 16 (App Router) · React 19 · Tailwind CSS 4 · TypeScript. No backend: calls are booked through the calendar at the foot of every page (`#book`), which opens a pre-written email to the team, and gifting quotes and the catalogue open WhatsApp with the message already written.
 
 ## Pages
 
@@ -34,7 +34,8 @@ Next.js 16 (App Router) · React 19 · Tailwind CSS 4 · TypeScript. No backend:
 
 ## To confirm before launch
 
-- **Contact details:** the WhatsApp number and email in `lib/site.ts` are blank. Until the number is set, buttons open WhatsApp's contact picker.
+- **Contact details:** the WhatsApp number and email in `lib/site.ts` are blank. Until the number is set, buttons open WhatsApp's contact picker. Until the email is set, booking requests open a draft with no recipient, so **set the email before sharing the site with prospects**.
+- **Booking hours:** Saturdays and Sundays, 10 AM to 5 PM IST (lunch hour skipped), 30-minute calls, up to 6 weeks ahead, at least 12 hours' notice. Change any of it in `BOOKING` in `lib/site.ts`. Requests are not real bookings: the team confirms each one by sending a meeting invite.
 - **Track record figures** (`lib/content.ts`) come from Adil's LinkedIn. Confirm each one, and that he is comfortable naming Samsung, Coca-Cola, Reliance, Spice, Swiss Military and Meizu. They are shown as text, not logos.
 - **IIM Lucknow:** confirm the programme before it stays on the founder section.
 - **Founder photo:** `public/founder.jpg` is only 229px square, so `components/home/Founder.tsx` shows it as a round portrait on the accent panel. A sharper portrait (1000px+ wide, plain background) could fill the whole panel.
@@ -44,6 +45,8 @@ Next.js 16 (App Router) · React 19 · Tailwind CSS 4 · TypeScript. No backend:
 - **Indexing:** `robots` is `noindex` in `app/layout.tsx` for the pitch. Remove at launch.
 
 ## Notes
+
+- **Link previews** (WhatsApp, LinkedIn, Slack) use `app/opengraph-image.tsx`, rendered at build time from `BRAND`, the founder photo and the map data, so a name change updates the card too. It needs TTF fonts, kept as static cuts of the site's fonts in `app/fonts/og/`. WhatsApp caches previews per URL, so after a change, test with a fresh URL (e.g. add `?v=2`).
 
 - The map draws cities at real coordinates without a country outline, which avoids India's official-boundary rules for published maps.
 - Fonts are self-hosted from Google Fonts: Geist, Geist Mono and Instrument Serif (all OFL). The `public/fonts/*-latin-ext` files exist so the ₹ sign renders in Geist.

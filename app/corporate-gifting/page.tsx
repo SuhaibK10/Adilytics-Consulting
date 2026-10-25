@@ -6,9 +6,12 @@ import { QuoteForm } from "@/components/gifting/QuoteForm";
 import { ClosingCTA } from "@/components/ClosingCTA";
 import { ArrowRight, OccasionIcon } from "@/components/Icons";
 
+const DESCRIPTION = `Corporate and B2B gifting from ${BRAND.name}: festive hampers, onboarding kits, client gifts and dealer rewards, branded for you and delivered across India.`;
+
 export const metadata: Metadata = {
   title: "Corporate Gifting",
-  description: `Corporate and B2B gifting from ${BRAND.name}: festive hampers, onboarding kits, client gifts and dealer rewards, branded for you and delivered across India.`,
+  description: DESCRIPTION,
+  openGraph: { title: `Corporate Gifting · ${BRAND.name}`, description: DESCRIPTION, url: "/corporate-gifting" },
 };
 
 export default function CorporateGiftingPage() {
@@ -138,8 +141,8 @@ export default function CorporateGiftingPage() {
             Planning gifts for <Em>this season?</Em>
           </>
         }
-        body="Share the occasion, numbers and deadline, and we will come back with options worth choosing from."
-        message={`Hi ${BRAND.name}, I'm planning corporate gifts and would like some options.`}
+        body="Talk through the occasion, numbers and deadline on a short call, and we will come back with options worth choosing from."
+        topic="Corporate & B2B gifting"
       />
     </>
   );

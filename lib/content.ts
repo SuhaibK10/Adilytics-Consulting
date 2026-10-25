@@ -46,6 +46,9 @@ export const SERVICES: Service[] = [
   },
 ];
 
+// Topics offered on the booking form. The audit comes first because "Start with an audit" links to the calendar.
+export const CALL_TOPICS = ["Distribution audit", ...SERVICES.map((s) => s.title), "Something else"];
+
 export const STEPS = [
   {
     title: "Audit",

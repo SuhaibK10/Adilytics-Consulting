@@ -33,6 +33,11 @@ export function Footer() {
           <p className="eyebrow">Talk to us</p>
           <ul className="mt-4 space-y-2.5 text-sm">
             <li>
+              <a href="#book" className="text-ink-soft hover:text-ink">
+                Book a call
+              </a>
+            </li>
+            <li>
               <a href={whatsappLink(`Hi ${BRAND.name}, I'd like to talk.`)} target="_blank" rel="noopener noreferrer" className="text-ink-soft hover:text-ink">
                 WhatsApp
               </a>

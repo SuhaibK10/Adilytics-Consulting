@@ -1,5 +1,4 @@
 import { STEPS } from "@/lib/content";
-import { BRAND, whatsappLink } from "@/lib/site";
 import { SectionHeading, Em } from "@/components/SectionHeading";
 import { ArrowRight } from "@/components/Icons";
 
@@ -18,9 +17,7 @@ export function HowWeWork() {
             intro="A fixed plan with clear timings, not an open-ended retainer. You always know what happens this month and what it should deliver."
           />
           <a
-            href={whatsappLink(`Hi ${BRAND.name}, we'd like to start with a distribution audit.`)}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#book"
             className="mt-8 inline-flex items-center gap-2 rounded-full bg-ink px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-accent-strong"
             data-reveal
           >

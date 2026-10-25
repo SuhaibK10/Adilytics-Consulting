@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { NAV, whatsappLink, BRAND } from "@/lib/site";
+import { NAV, BRAND } from "@/lib/site";
 import { Logo } from "@/components/Logo";
 import { ArrowRight, Cross, Menu } from "@/components/Icons";
 
@@ -14,7 +14,8 @@ export function Header() {
 
   useEffect(() => setOpen(false), [pathname]);
 
-  const bookCall = whatsappLink(`Hi ${BRAND.name}, I'd like to book a call about growing our brand.`);
+  // Every page ends with the booking calendar (ClosingCTA)
+  const bookCall = "#book";
 
   return (
     <header className="sticky top-0 z-50 px-3 pt-3 sm:px-4 sm:pt-4">
@@ -47,8 +48,6 @@ export function Header() {
             </Link>
             <a
               href={bookCall}
-              target="_blank"
-              rel="noopener noreferrer"
               className="hidden rounded-full bg-accent px-4.5 py-2 text-[0.84rem] font-medium text-white transition-colors hover:bg-accent-strong sm:inline-flex"
             >
               Book a call
@@ -88,8 +87,7 @@ export function Header() {
           </ul>
           <a
             href={bookCall}
-            target="_blank"
-            rel="noopener noreferrer"
+            onClick={() => setOpen(false)}
             className="mt-1 block rounded-2xl bg-accent px-4 py-3 text-center text-[0.95rem] font-medium text-white sm:hidden"
           >
             Book a call

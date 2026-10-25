@@ -20,6 +20,20 @@ export function whatsappLink(message: string) {
   return `${base}?text=${encodeURIComponent(message)}`;
 }
 
+// Empty CONTACT.email still opens a draft, just without the recipient filled in.
+export function emailLink(subject: string, body: string) {
+  return `mailto:${CONTACT.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
+
+// Call booking calendar. Times are IST. Days use JavaScript numbering: 0 = Sunday, 6 = Saturday.
+export const BOOKING = {
+  days: [6, 0],
+  times: ["10:00", "11:00", "12:00", "14:00", "15:00", "16:00", "17:00"],
+  minutes: 30,
+  weeksAhead: 6,
+  minNoticeHours: 12, // slots sooner than this are hidden
+};
+
 export const NAV = [
   { href: "/#services", label: "Services" },
   { href: "/#how-we-work", label: "How we work" },
