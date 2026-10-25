@@ -58,7 +58,6 @@ export function Footer() {
         <p>
           © {new Date().getFullYear()} {BRAND.legalName}. All rights reserved.
         </p>
-        <p className="font-mono uppercase tracking-[0.14em]">Website by Weblicate</p>
       </div>
     </footer>
   );
