@@ -1,4 +1,5 @@
-import { TRACK_RECORD } from "@/lib/content";
+import Image from "next/image";
+import { SOURCE_LOGOS, TRACK_RECORD } from "@/lib/content";
 import { SectionHeading, Em } from "@/components/SectionHeading";
 
 // Stat-first cards (Tano's pattern, in a calmer key): the number leads, the context follows.
@@ -27,12 +28,18 @@ export function TrackRecord() {
               <p className="text-[2.75rem] font-medium leading-none tracking-[-0.045em] text-accent sm:text-[3.25rem]">{item.value}</p>
               <p className="mt-4 text-[0.98rem] leading-snug text-ink">{item.label}</p>
               <div className="mt-auto pt-6">
-                <p className="border-t border-dashed border-line pt-4 font-mono text-[0.6875rem] uppercase tracking-[0.14em] text-ink-mute">{item.source}</p>
+                <div className="flex h-14 items-center border-t border-dashed border-line pt-4">
+                  {SOURCE_LOGOS[item.source] ? (
+                    <Image src={SOURCE_LOGOS[item.source].src} alt={item.source} style={{ height: SOURCE_LOGOS[item.source].height, width: "auto" }} />
+                  ) : (
+                    <span className="text-[0.95rem] font-medium tracking-tight text-ink">{item.source}</span>
+                  )}
+                </div>
               </div>
             </li>
           ))}
         </ul>
-        <p className="mt-6 text-xs text-ink-mute">Figures are from roles our team has held at the companies named.</p>
+        <p className="mt-6 text-xs text-ink-mute">Figures are from roles our team has held at these companies. Logos are their owners&rsquo; trademarks and do not imply endorsement.</p>
       </div>
     </section>
   );

@@ -1,8 +1,11 @@
 // Page copy and data. Track record figures come from the founder's LinkedIn (shared 2026-10-25) and are
 // presented as the team's experience; confirm each with him before launch.
 
+import type { StaticImageData } from "next/image";
 import louisPoloLogo from "@/public/clients/louis-polo.svg";
 import ovastarLogo from "@/public/clients/ovastar.png";
+import samsungLogo from "@/public/experience/samsung.svg";
+import cocaColaLogo from "@/public/experience/coca-cola.svg";
 
 export const HERO_WORDS = ["get on more shelves.", "enter new cities.", "build real distribution.", "win corporate orders."];
 
@@ -78,6 +81,13 @@ export const TRACK_RECORD = [
   { value: "2 months", label: "to appoint distributors and clear pending trade issues across Mumbai, Goa, Maharashtra and MP", source: "Reach Mobiletech" },
   { value: "13", label: "regional distributors managed across Mumbai and Goa", source: "Samsung India" },
 ];
+
+// Ink logos for the track record cards, keyed by source, with a display height that evens out their visual weight.
+// Sources without an official logo (Reach Mobiletech) are set as text.
+export const SOURCE_LOGOS: Record<string, { src: StaticImageData; height: number }> = {
+  "Samsung India": { src: samsungLogo, height: 13 },
+  "Hindustan Coca-Cola": { src: cocaColaLogo, height: 26 },
+};
 
 export type Cell = string | boolean;
 
